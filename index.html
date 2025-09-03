@@ -22,7 +22,7 @@
                     </div>
                     <div id="fileNameArea" class="mt-3 text-muted">
                         <p><span id="fileName"></span>
-                            <a id="close" onclick="clearFile()" href="" type="button">
+                            <a id="clearFile" onclick="clearFile()" href="" type="button">
                                 <i class="bi bi-x-octagon"></i>
                             </a>
                         </p>
@@ -70,56 +70,44 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div class="title col-12">
-            <h1>Classificação de Emails</h1>
-        </div>
-
-        <div class="manual-area col-6">
-            <div class="manual-title">
-                <h3>Inserir texto manualmente</h3>
-            </div>
-            <div class="manual-input-text">
-                <textarea id="emailText"></textarea>
-            </div>
-            <div class="manual-button">
-                <button onclick="classificarTexto()">Classificar Texto</button>
-            </div>
-        </div>
-
-        <div class="file-area col-6">
-            <div class="file-title">
-                <h3>Ou enviar arquivo (.txt / .pdf)</h3>
-            </div>
-            <div class="file-type">
-                <input type="file" id="fileInput">
-            </div>
-            <div class="file-button">
-                <button onclick="classificarArquivo()">Classificar Arquivo</button>
-            </div>
-        </div>
-
-
-
-        <div class="result-area col-12" id="resultado">
-            <div class="result-content">
-                <div class="result-title">
-                    <h3>Resultado</h3>
-                </div>
-                <div class="result-content">
-                    <p><strong>Categoria:</strong> <span id="categoria"></span></p>
-                    <p><strong>Resposta sugerida:</strong> <span id="resposta"></span></p>
-                    <details id="details">
-                        <summary>Texto extraído</summary>
-                        <pre id="textoExtraido"></pre>
-                    </details>
-                </div>
-                <div class="result-clear-button">
-                    <button onclick="clearResult()">Limpar</button>
-                </div>
-            </div>
-        </div> -->
     </div>
+    <button
+        type="button"
+        class="btn btn-primary fab"
+        data-bs-toggle="modal"
+        data-bs-target="#resultadoModal"
+        aria-label="Abrir resumo de resultados"
+    >
+        <i class="bi bi-envelope-exclamation"></i>
+    </button>
+
+    <div
+        class="modal fade"
+        id="resultadoModal"
+        tabindex="-1"
+        aria-labelledby="resultadoModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="resultadoModalLabel">
+                        Resumo dos Resultados
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <ul id="modalListResult"></ul>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button class="btn btn-outline-danger" onclick="clearResults()" data-bs-dismiss="modal">Limpar</button>
+                </div>
+            </div>
+        </div>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="./src/script/script.js"></script>
